@@ -2,20 +2,28 @@
 #include <cstring>
 using namespace std;
 
-
+/**
+ * Fonction de distribution de coups de poing
+ * Elle remplace toute lettre 'p' ou caractère '.' ou ';' ou ':' trouvés dans la chaîne de caractères str,
+ * par le mot 'poing', 'poingvirgule' ou 'deuxpoings' et retourne la chaîne de caractères produite
+ */
 char* distribuer_des_coups_de_poing(const char* str);
 
-// Ajoute une chaîne de caractères poing_a_distribuer à la chaîne str à l'indice i par décalage à droite
+/**
+ * Ajoute une chaîne de caractères poing_a_distribuer à la chaîne str à l'indice i par décalage à droite
+ */
 void distribuer_un_poing(char* str, size_t i, const char* poing_a_distribuer);
 
-// Vérifie que le 'p' qui est identifié à l'indice i n'appartient pas à la chaîne deuxpoings
-// car cela laisserait penser qu'il a été ajouté suite au remplacement d'un ':'
+/**
+ * Vérifie que le 'p' qui est identifié à l'indice i n'appartient pas à la chaîne deuxpoings
+ * car cela laisserait penser qu'il a été ajouté suite au remplacement d'un ':'
+ */
 bool verifier_p_deuxpoings(const char* str_poing, size_t i);
+
 
 int main() {
 
 	const char* synopsys = "Synopsys: dans les quartiers populaires de Philadelphie, Rocky Balboa collecte des dettes non payées pour Tony Gazzo, un usurier; il dispute de temps à autre, pour quelques dizaines de dollars, des combats de boxe sous l'appellation de l'étalon italien.";
-	//const char* synopsys = "Synopsys: xx personnage xx";
 
 	cout << distribuer_des_coups_de_poing(synopsys);
 
@@ -86,6 +94,7 @@ char* distribuer_des_coups_de_poing(const char* str) {
 
 }
 
+
 void distribuer_un_poing(char* str, size_t i, const char* poing_a_distribuer) {
 	
 	// On remplace le premier caractère
@@ -108,6 +117,7 @@ void distribuer_un_poing(char* str, size_t i, const char* poing_a_distribuer) {
 		
 	}
 }
+
 
 bool verifier_p_deuxpoings(const char* str, size_t i) {
 	// "deuxpoings"
